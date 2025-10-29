@@ -1,14 +1,205 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+      
   </head>
-  <body>
-    <a-scene>
-      <a-cylinder position="1 1 1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
-    </a-scene>
+  <body style="margin: 0px; overflow: hidden;">
+    <a-scene embedded arjs          renderer="logarithmicDepthBuffer: true" smooth="true" smooth-count="10" smooth-tolerance="0.1" smooth-threshold="1">
+     <a-assets>
+     <a-asset-item id="pointer" src="https://raw.githubusercontent.com/Morninglord22/SignpostARProject/refs/heads/main/direction_arrow/scene.gltf"></a-asset-item>
+     
+   </a-assets>   
+	
+      <a-marker preset="hiro" size="0.14" id="marker">
+        <a-text value="How to Photocopy" 
+                position="0 -1.8 -2.9" 
+                align="center" 
+                rotation="-90 0 0"
+                color="#FF00FF"
+ width="6"
+                >
+        </a-text>
+        <!--Step 1 pointer-->
+        <a-gltf-model src="#pointer"
+                position="-1.55 -1 -3.25"
+                rotation="0 190 0"
+                scale="0.2 0.2 0.2">
+  </a-gltf-model>
+        <!--Step 1 text-->
+        <a-text value="Step 1" 
+                  position="-2.95 -0.8 -3.8"
+                  align="center" 
+                  rotation="-110 0 0"
+                  color="#FF00FF">
+        </a-text>
+        <a-text value="Purchase" 
+                  position="-3.4 -0.8 -2.1"
+                  align="center" 
+                  rotation="-110 0 0"
+                  color="#FF00FF">
+        </a-text>
+        <a-text value="photocopies" 
+                  position="-3.5 -0.8 -1.8"
+                  align="center" 
+                  rotation="-110 0 0"
+                  color="#FF00FF">
+        </a-text>
+        <!--Step 1 Box -->
+        <a-box position="-3.6 -1.8 -2.2"
+             depth="0.4" 
+             height="1" 
+             width="1.8"
+             opacity="0.5"
+             rotation="15 0 0"
+             color="#FF0000">
+          </a-box>
+        <!--Pointer to step 2 -->
+        <a-gltf-model src="#pointer"
+                position="-1.9 -0.5 -3"
+                rotation="0 0 0"
+                scale="0.2 0.2 0.2">
+  </a-gltf-model>        
+        <a-gltf-model src="#pointer"
+                position="-0.9 -0.5 -3"
+                rotation="0 0 0"
+                scale="0.2 0.2 0.2">
+  </a-gltf-model>
+        <a-gltf-model src="#pointer"
+                position="0.1 -0.5 -3"
+                rotation="0 0 0"
+                scale="0.2 0.2 0.2">
+  </a-gltf-model>
+        <a-gltf-model src="#pointer"
+                position="1.1 -0.5 -3"
+                rotation="0 0 0"
+                scale="0.2 0.2 0.2">
+  </a-gltf-model>
+        <!--Step 2 text CANCELLED CODE
+       <a-text value="Step 2" 
+               position="-2.5 -0.5 0" 
+               align="center" 
+               rotation="-90 0 0" 
+               color="#FF00FF"></a-text>
+        <!-- Step 2 box 
+        <a-box position="-2.5 -0.8 -1" 
+             depth="0.5" 
+             height="0.5" 
+             width="0.5"
+             opacity="0.5"
+             rotation="-90 0 0"
+             color="#FF0000">
+         </a-box>-->
+        <!--Step 2 text-->
+        <a-text value="Step 2" 
+                position="2.1 -1.2 -3.0" 
+                align="center" 
+                rotation="-110 0 0" 
+                color="#FF00FF">
+        </a-text>
+        <a-text value="Scan" 
+                position="2.6 -1.2 -2.5" 
+                align="left" 
+                rotation="-110 0 0" 
+                color="#FF00FF">
+        </a-text>
+        <a-text value="barcode" 
+                position="2.6 -1.2 -2.15" 
+                align="left" 
+                rotation="-110 0 0" 
+                color="#FF00FF">
+        </a-text>
+        <!--Step 2 box -->
+        <a-box position="2.4 -2 -1.6" 
+             depth="0.55" 
+             height="0.8" 
+             width="0.55"
+             opacity="0.5"
+             rotation="-80 0"
+             color="#FF0000">
+         </a-box>
+        <!--Pointer to step 3-->
+        <a-gltf-model src="#pointer"
+                position="1.7 -0.5 -2.1"
+                rotation="0 210 0"
+                scale="0.2 0.2 0.2">
+          </a-gltf-model>
+          
+        <!--Step 3 text-->
+        <a-text value="Step 3" 
+                position="0.5 0 -1.5" 
+                align="center" 
+                rotation="-110 0 0" 
+                color="#FF00FF">
+        </a-text>
+        <a-text value="Enter password" 
+                position="0.5 0 -1.1" 
+                align="center" 
+                rotation="-110 0 0" 
+                color="#FF00FF">
+        </a-text>
+        <a-text value="and press 'Copy'" 
+                position="0.5 0 -0.7" 
+                align="center" 
+                rotation="-110 0 0" 
+                color="#FF00FF">
+        </a-text>
+        
+        <!--Step 3 box -->
+        <a-box position="0.5 -0.5 -2" 
+             depth="0.4" 
+             height="1" 
+             width="1.6"
+             opacity="0.5"
+             rotation="15 0 0"
+             color="#FF0000">
+         </a-box>
+        <!--<a-text value="password and press" position="0 0 -0.3" align="center" rotation="-90 0 0" color="#FF00FF"></a-text>
+        <a-text value="'Copy'" position="0 0 0" align="center" rotation="-90 0 0" color="#FF00FF"></a-text> -->
+       
+               
+      </a-marker>
+     <a-entity id="message" position="0 1.5 -3" >
+        <a-plane width="4" height="1.5" color="#000" opacity="0.7"></a-plane>
+        <a-text value="Step back!" align="center" color="#FFFFFF"></a-text>
+      </a-entity>
+    
+<script>
+  const marker = document.getElementById('marker');
+  const message = document.getElementById('message');
+
+  // Initially set the message as visible
+  message.setAttribute('visible', true);
+  
+  marker.addEventListener('markerLost', function() {
+    console.log("Marker Lost");
+    // Keep the message visible when marker is lost
+    message.setAttribute('visible', true);
+    
+    const entities = marker.children;
+    for (let i = 0; i < entities.length; i++) {
+      entities[i].setAttribute('visible', false);  // Hide all marker entities
+    }
+  });
+
+  marker.addEventListener('markerFound', function() {
+    console.log("Marker Found");
+    // Hide marker entities when the marker is found
+    const entities = marker.children;
+    for (let i = 0; i < entities.length; i++) {
+      entities[i].setAttribute('visible', true);  // Show all marker entities
+    }
+    
+    // Hide the message only when the marker is found
+    message.setAttribute('visible', false);  
+  });
+</script>
+
+   <a-entity camera></a-entity>
+      </a-scene>
+     
   </body>
 
 </html>
+
 
