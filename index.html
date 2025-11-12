@@ -1,1 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <style>
+      /* Basic styles for the HUD */
+      #hud {
+        position: absolute;
+        bottom: 200px;
+        right: 50px;
+        text-align: center;
+        color: white;
+        font-family: Arial, sans-serif;
+        z-index: 10; /* Ensure the HUD is on top */
+        font-weight: bold;      /* Bold the text */
+        transform: rotate(90deg); /* Rotate the text to be readable in landscape */
+        transform-origin: right bottom; /* Adjust the rotation point */
+        
+        
+      }
+      .clickable {
+        background-color: rgba(34, 177, 0, 1);
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transform: rotate(180deg); /* Rotate the text to be readable in landscape */
+        transform-origin: right bottom; /* Adjust the rotation point */
+      }
+   </style>   
+    
+  </head>
+  <body style="margin: 0px; overflow: hidden;">
+    <div id="hud">
+  <div class="clickable" id="clickBox" style="display: none;">Step 1 Instructions</div>
+</div>
+    <a-scene embedded arjs renderer="logarithmicDepthBuffer: true" smooth="true" smooth-count="10" smooth-tolerance="0.1" smooth-threshold="1">
+     <a-assets>
+     <a-asset-item id="pointer" src="https://raw.githubusercontent.com/Morninglord22/SignpostARProject/refs/heads/main/direction_arrow/scene.gltf"></a-asset-item>
+     
+   </a-assets>   
+	<!--Title of system-->
+      <a-marker preset="hiro" size="0.14" id="marker">
+        <a-text value="How to Photocopy" 
+                position="0 -1.8 -2.9" 
+                align="center" 
+                rotation="-90 0 0"
+                color="#FAF9F6"
+ width="6"
+                >
+        </a-text>
+        <!--Background Plane for Title-->
+        <a-plane width="2.3" 
+                 height="0.5"
+                 position="0 -1.8 -2.9"
+                 color="#22B14C" 
+                 opacity="0.7"
+                 rotation="-90 0 0"></a-plane> 
+        <!--Step 1 pointer-->
+        <a-gltf-model src="#pointer"
+                position="-1.55 -1 -3.25"
+                rotation="0 190 0"
+                scale="0.2 0.2 0.2">
+  </a-gltf-model>
+        <!--Step 1 text-->
+        <a-text value="Step 1" 
+                  position="-2.95 -0.8 -3.8"
+                  align="center" 
+                  rotation="-110 0 0"
+                  color="#FAF9F6">
+        </a-text>
+        <!--Background Plane for Step 1 text-->
+        <a-plane width="1" 
+                 height="0.5"
+                 position="-2.95 -0.8 -3.8"
+                 color="#22B14C" 
+                 opacity="0.7"
+                 rotation="-110 0 0"></a-plane> 
+        <a-text value="Purchase" 
+                  position="-3.4 -0.8 -2.1"
+                  align="center" 
+                  rotation="-110 0 0"
+                  color="#FAF9F6">
+        </a-text>
+        <a-text value="photocopies" 
+                  position="-3.45 -0.8 -1.8"
+                  align="center" 
+                  rotation="-110 0 0"
+                  color="#FAF9F6">
+        </a-text>
+        <!--Background Plane for Purchase photocopies text-->
+        <a-plane width="1.3" 
+                 height="0.6"
+                 position="-3.5 -0.9 -1.85"
+                 color="#22B14C" 
+                 opacity="0.7"
+                 rotation="-110 0 0"></a-plane> 
+        <!--Step 1 Box -->
+        <a-box id="clickbox" position="-3.6 -1.8 -2.2"
+             depth="0.4" 
+             height="1" 
+             width="1.8"
+             opacity="0.3"
+             rotation="15 0 0"
+             color="#FF0000">
+          </a-box>
+        <!--Pointer to step 2 -->
+        <a-gltf-model src="#pointer"
+                position="-1.9 -0.5 -3"
+                rotation="0 0 0"
+                scale="0.2 0.2 0.2">
+  </a-gltf-model>        
+        <a-gltf-model src="#pointer"
+                position="-0.9 -0.5 -3"
+                rotation="0 0 0"
+                scale="0.2 0.2 0.2">
+  </a-gltf-model>
+        <a-gltf-model src="#pointer"
+                position="0.1 -0.5 -3"
+                rotation="0 0 0"
+                scale="0.2 0.2 0.2">
+  </a-gltf-model>
+        <a-gltf-model src="#pointer"
+                position="1.1 -0.5 -3"
+                rotation="0 0 0"
+                scale="0.2 0.2 0.2">
+  </a-gltf-model>
+        <!--Text for Step 2-->
+        <a-text value="Step 2" 
+                position="2.1 -1.2 -3.0" 
+                align="center" 
+                rotation="-110 0 0" 
+                color="#FAF9F6">
+        </a-text>
+        <!--Background Plane for Step 2 text-->
+        <a-plane width="0.8" 
+                 height="0.4"
+                 position="2.1 -1.2 -3.0"
+                 color="#22B14C" 
+                 opacity="0.7"
+                 rotation="-110 0 0"></a-plane>
+        <!--Text for "Scan Barcode" text-->
+        <a-text value="Scan" 
+                position="2.6 -1.3 -2.5" 
+                align="left" 
+                rotation="-110 0 0" 
+                color="#FAF9F6">
+        </a-text>
+        <a-text value="barcode" 
+                position="2.6 -1.3 -2.15" 
+                align="left" 
+                rotation="-110 0 0" 
+                color="#FAF9F6">
+        </a-text>
+        <!--Background Plane for "Scan barcode"                 text-->
+        <a-plane width="0.9" 
+                 height="0.65"
+                 position="3.05 -1.4 -2.25"
+                 color="#22B14C" 
+                 opacity="0.7"
+                 rotation="-110 0 0"></a-plane> 
+        <!--Step 2 box -->
+        <a-box position="2.4 -2 -1.6" 
+             depth="0.55" 
+             height="0.8" 
+             width="0.55"
+             opacity="0.3"
+             rotation="-80 0"
+             color="#FF0000">
+         </a-box>
+        <!--Pointer to step 3-->
+        <a-gltf-model src="#pointer"
+                position="1.7 -0.5 -2.1"
+                rotation="0 210 0"
+                scale="0.2 0.2 0.2">
+          </a-gltf-model>
+          
+        <!--Step 3 text-->
+        <a-text value="Step 3" 
+                position="0.5 0 -1.5" 
+                align="center" 
+                rotation="-110 0 0" 
+                color="#FAF9F6">
+        </a-text>
+        <a-text value="Enter password" 
+                position="0.5 0 -1.1" 
+                align="center" 
+                rotation="-110 0 0" 
+                color="#FAF9F6">
+        </a-text>
+        <a-text value="and press 'Copy'" 
+                position="0.5 0 -0.7" 
+                align="center" 
+                rotation="-110 0 0" 
+                color="#FAF9F6">
+        </a-text>
+        <!--Background Plane for "Step 3 Enter password and press copy" text-->
+        <a-plane width="1.65" 
+                 height="1.1"
+                 position="0.5 -0.2 -0.9"
+                 color="#22B14C" 
+                 opacity="0.7"
+                 rotation="-110 0 0"></a-plane> 
+        <!--Step 3 box -->
+        <a-box position="0.5 -0.5 -2" 
+             depth="0.4" 
+             height="1" 
+             width="1.6"
+             opacity="0.3"
+             rotation="15 0 0"
+             color="#FF0000">
+         </a-box>
+                      
+      </a-marker>
+     <a-entity id="message" position="0 0 -1" visible="true" rotation="0 0 90">
+        <a-plane width="1" height="1.5" color="#000" opacity="0.7"></a-plane>
+        <a-text value="Stand in front of the photocopier, then step back and point your camera at it in landscape mode so the 'Hiro' sign is in view." width ="0.75" height="2" align="center" color="#FFFFFF"></a-text>
+      </a-entity>
+
+   <a-entity camera ></a-entity>
+      </a-scene>
+     
+  <script>
+    const marker = document.getElementById('marker');
+    const message = document.getElementById('message');
+    const clickBox = document.getElementById('clickBox');
+    const webpageUrl = 'instructions.html'; // Call to instructions.html file in hosting repository
+
+    // Keep the message visible by default
+    message.setAttribute('visible', true);
+
+    // Ensure visibility when the camera initializes
+    marker.addEventListener('markerLost', function() {
+      console.log("Marker Lost");
+      message.setAttribute('visible', true);  // Show message
+      clickBox.style.display = 'none'; // Hide the Step 1 Instructions button
+    });
+
+    marker.addEventListener('markerFound', function() {
+      console.log("Marker Found");
+      message.setAttribute('visible', false);  // Hide message
+      clickBox.style.display = 'block'; // Show the Step 1 Instructions button
+      
+    });
+
+    // Show the message when the scene loads
+    document.querySelector('a-scene').addEventListener('loaded', function() {
+      message.setAttribute('visible', true);
+    });
+    // Add click event listener
+      document.getElementById('clickBox').addEventListener('click', function() {
+        window.location.href = webpageUrl; // Open the URL in the current window
+      });
+  </script>
+  </body>
+
+</html>
 
