@@ -31,15 +31,17 @@
   </head>
   <body style="margin: 0px; overflow: hidden;">
     <div id="hud">
-  <div class="clickable" id="clickBox">Back</div> 
+  <div class="clickable" id="clickBox">Back</div>
+      <img id="instructions" src="https://raw.githubusercontent.com/Morninglord22/SignpostARProject/main/Purchase%20copies.jpg" 
+           style="position: absolute; top: 100px; left: 50%; transform: translateX(-50%) rotate(90deg);">
 </div>
     <a-scene embedded arjs>
      <a-assets>
      <img id="instructions" src="https://raw.githubusercontent.com/Morninglord22/SignpostARProject/main/Purchase%20copies.jpg"></img> <!--This is the instructions image file url source-->
      </a-assets>   
         <a-camera look-controls="enabled: false" position="0 1.6 0"></a-camera>    
-        <a-image src="#instructions" position="0 1.6 -2.3" rotation="-90 0 0"></a-image> <!--This displays the instructions. The z axis brings it closer or further away from camera. It is rotated 90 degrees so they are forced into landscape.-->
-        
+        <!--<a-image src="#instructions" position="0 1.6 -2.3" rotation="-90 0 0"></a-image> <!--This displays the instructions. The z axis brings it closer or further away from camera. It is rotated 90 degrees so they are forced into landscape.-->
+        -->
         <script>
       const clickBox = document.getElementById('clickBox');    
       const webpageUrl = 'index.html'; // Return to HTML homepage
@@ -52,6 +54,7 @@
   </body>
 
 </html>
+
 
 
 
