@@ -31,7 +31,7 @@
   </head>
   <body style="margin: 0px; overflow: hidden;">
     <div id="hud">
-  <div class="clickable" id="clickBox">Back</div> // This identifies the back button for later interaction code.
+  <div class="clickable" id="clickBox">Back</div> 
 </div>
     <a-scene embedded arjs>
      <a-assets>
@@ -41,7 +41,7 @@
         <a-image src="#instructions" position="0 1.6 -2.3" rotation="0 0 0"></a-image> <!--This displays the instructions. The z axis brings it closer or further away from camera. It is rotated 90 degrees so they are forced into landscape.-->
         
         <script>
-      const clickBox = document.getElementById('clickBox');    // This sets the variable for the back button interaction.
+      const clickBox = document.getElementById('clickBox');    
       const webpageUrl = 'index.html'; // Return to HTML homepage
       // Add click event listener
       document.getElementById('clickBox').addEventListener('click', function() {
@@ -52,4 +52,5 @@
   </body>
 
 </html>
+
 
