@@ -26,14 +26,19 @@
         transform: rotate(180deg); /* Rotate the text to be readable in landscape */
         transform-origin: right bottom; /* Adjust the rotation point */
       }
+      #instructions {
+        max-width: 50%; /* Limit the width of the image */
+        height: auto; /* Maintain the aspect ratio */
+        margin-top: 20px; /* Add spacing from the text */
+        transform: rotate(90deg); /* Rotate the image to landscape */
+      }
    </style>   
     
   </head>
   <body style="margin: 0px; overflow: hidden;">
     <div id="hud">
   <div class="clickable" id="clickBox">Back</div>
-      <img id="instructions" src="https://raw.githubusercontent.com/Morninglord22/SignpostARProject/main/Purchase%20copies.jpg" 
-           style="position: absolute; top: 100px; left: 50%; transform: translateX(-50%) rotate(90deg);">
+      <img id="instructions" src="https://raw.githubusercontent.com/Morninglord22/SignpostARProject/main/Purchase%20copies.jpg">
 </div>
     <a-scene embedded arjs>
      <a-assets>
@@ -54,6 +59,7 @@
   </body>
 
 </html>
+
 
 
 
