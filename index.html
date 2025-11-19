@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
-	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script> <!--Call aframe javascript framework-->
+	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> <!-- Call Ar.js javascript framework to allow marker detection-->
   <style>
-      /* Basic styles for the HUD */
+      /* Basic style for the Step 1 Instructions HUD button */
       #hud {
         position: absolute;
         bottom: 200px;
@@ -19,6 +19,7 @@
         
         
       }
+	  /* This is the clickable button for the Step 1 Instructions */
       .clickable {
         background-color: rgba(34, 177, 0, 1);
         padding: 10px;
@@ -32,21 +33,21 @@
   </head>
   <body style="margin: 0px; overflow: hidden;">
     <div id="hud">
-  <div class="clickable" id="clickBox" style="display: none;">Step 1 Instructions</div>
+  <div class="clickable" id="clickBox" style="display: none;">Step 1 Instructions</div> <!--Text for button. Also sets an id for javascript interaction-->
 </div>
-    <a-scene embedded arjs renderer="logarithmicDepthBuffer: true" smooth="true" smooth-count="10" smooth-tolerance="0.1" smooth-threshold="1">
-     <a-assets>
-     <a-asset-item id="pointer" src="https://raw.githubusercontent.com/Morninglord22/SignpostARProject/refs/heads/main/direction_arrow/scene.gltf"></a-asset-item>
+    <a-scene embedded arjs renderer="logarithmicDepthBuffer: true" smooth="true" smooth-count="10" smooth-tolerance="0.1" smooth-threshold="1"> <!--The smooth components help smooth the AR elements when the marker isn't being detected well -->
+     <a-assets>->
+     <a-asset-item id="pointer" src="https://raw.githubusercontent.com/Morninglord22/SignpostARProject/refs/heads/main/direction_arrow/scene.gltf"></a-asset-item> <!--Loads the 3d pointer model -->
      
    </a-assets>   
-	<!--Title of system-->
+	<!--Introductory title of AR display. Further comments will explain basic repeated components-->
       <a-marker preset="hiro" size="0.14" id="marker">
         <a-text value="How to Photocopy" 
-                position="0 -1.8 -2.9" 
-                align="center" 
-                rotation="-90 0 0"
-                color="#FAF9F6"
- width="6"
+                position="0 -1.8 -2.9" <!-- These are xyz coordinates that place the object based on the physical position of the marker -->
+                align="center" <!-- Aligns the text to center. Used for formatting. -->
+                rotation="-90 0 0" <!--The markers position affects the default rotation. -90 degrees makes objects face the camera correctly. This is repeated by default.-->
+                color="#FAF9F6" <!--Colour of text-->
+ 				width="6" <!--This controls the horizontal size of the text. Increased to make text appear as a title.-->
                 >
         </a-text>
         <!--Background Plane for Title-->
@@ -255,4 +256,5 @@
   </body>
 
 </html>
+
 
