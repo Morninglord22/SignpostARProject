@@ -1,160 +1,50 @@
 <html>
-
-
-
   <head>
-
-
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
-
-
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-
-
        <style>
-
-
       /* Basic styles for the HUD */
-
-
       #hud {
-
-
         position: absolute;
-
-
         bottom: 180px;
-
-
         right: 23px;
-
-
         text-align: center;
-
-
         color: black;
-
-
         font-family: Arial, sans-serif;
-
-
         z-index: 10; /* Ensure the HUD is on top */
-
-
         font-weight: bold;      /* Bold the text */
-
-
         transform: rotate(90deg); /* Rotate the text to be readable in landscape */
-
-
         transform-origin: right bottom; /* Adjust the rotation point */
-
-
-        
-
-
-        
-
-
       }
-
-
       .clickable {
-
-
         background-color: rgba(250, 215, 00, 1);
-
-
         padding: 10px;
-
-
         border-radius: 5px;
-
-
         cursor: pointer;
-
-
         transform: rotate(180deg); /* Rotate the text to be readable in landscape */
-
-
         transform-origin: right bottom; /* Adjust the rotation point */
-
-
       }
-
-
    </style>   
-
-
-    
-
-
   </head>
-
-
   <body style="margin: 0px; overflow: hidden;">
-
-
     <div id="hud">
-
-
   <div class="clickable" id="clickBox">Back</div>
-
-
 </div>
-
-
     <a-scene embedded arjs>
-
-
      <a-assets>
-
-
      <img id="instructions" src="https://raw.githubusercontent.com/Morninglord22/SignpostARProject/main/Purchase%20copies.jpg"></img> <!--This is the instructions image file url source-->
-
-
      </a-assets>   
-
-
         <a-camera look-controls="enabled: false" position ="0 1.6 0"></a-camera>    
-
-
-        <a-image src="#instructions" position="0 1.6 -2.3" rotation="-90 0 0"></a-image> <!--This displays the instructions. The z axis brings it closer or further away from camera. It is rotated 90 degrees so they are forced into landscape.-->
-
-
-        
-
-
+        <a-image src="#instructions" position="0 1.6 -2.3" rotation="0 0 0"></a-image> <!--This displays the instructions. The z axis brings it closer or further away from camera. It is rotated 90 degrees so they are forced into landscape.-->
         <script>
-
-
       const clickBox = document.getElementById('clickBox');    
-
-
       const webpageUrl = 'index.html'; // Return to HTML homepage
-
-
       // Add click event listener
-
-
       document.getElementById('clickBox').addEventListener('click', function() {
-
-
         window.location.href = webpageUrl; // Open the URL in the current window
-
-
       });
-
-
     </script>
-
-      </a-scene>
-
-
+     </a-scene>
   </body>
-
-
-
-
-
 </html>
+
